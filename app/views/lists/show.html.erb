@@ -13,16 +13,23 @@
       <% @movie = @movies.find(bm.movie_id) %>
         <div class="col-md-4">
           <div class="card movie-card">
-            <%# <img src="path_to_image.jpg" class="card-img-top" alt="Movie Image"> %>
             <%= image_tag @movie.poster_url, alt: "Movie Poster", height: 200 %>
+
             <div class="card-body">
-              <h5 class="card-title"><%= @movie.title %> <span class="badge bg-secondary"><%= @movie.rating %></span></h5>
+              <h5 class="card-title"><%= @movie.title %> · <span>⭐<%= @movie.rating %></span></h5>
               <p class="card-text"><%= @movie.overview %></p>
             </div>
-          </div>
-        </div>
-      <% end %>
-    </div>
-  <% end %>
 
+            <div class="card-footer d-flex justify-content-between align-items-center">
+              <p class="mb-0">
+                <i class="fa-regular fa-comment"></i></i> <%= bm.comment %>
+              </p>
+              <a href="#" class="text-danger">delete</a>
+            </div>
+
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
 </div>
