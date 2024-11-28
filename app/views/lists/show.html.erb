@@ -1,0 +1,8 @@
+<%= render "navbar" %>
+<h2><%= @list.name %></h2>
+<% @bookmarks.each do |bm| %>
+<%= @movies.find(bm.movie_id).title %>
+<%= @movies.find(bm.movie_id).rating %> <%# This seems very inefficient %>
+<%= bm.comment %>
+<% end %>
+<%# TODO - have movies in a container and display as cards  %>

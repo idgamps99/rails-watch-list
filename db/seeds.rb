@@ -23,16 +23,22 @@ puts "Starting seeds..."
 #   poster_url: "https://image.tmdb.org/t/p/original/MvYpKlpFukTivnlBhizGbkAe3v.jpg",
 #   rating: 7.0)
 
-List.create(
-  name: "All time favourites"
-)
-List.create(
-  name: "Cosy night in"
-)
-List.create(
-  name: "Favourite horror films"
-)
-List.create(
-  name: "Best documentaries"
-)
+# List.create(
+#   name: "All time favourites"
+# )
+# List.create(
+#   name: "Cosy night in"
+# )
+# List.create(
+#   name: "Favourite horror films"
+# )
+# List.create(
+#   name: "Best documentaries"
+# )
+
+wonder_woman = Movie.find(1)
+shawshank = Movie.find(2)
+titanic = Movie.find(3)
+ocean = Movie.find(4)
 puts "Finished seeding"
+
