@@ -1,2 +1,27 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.container {
+  background-color: rgba(74, 74, 196, 0.927);
+  height: 1000px;
+}
+
+.justify-content-between {
+  background-color: greenyellow;
+}
+
+.card {
+  height: 200px;
+}
+
+.row {
+  margin: 8px;
+}
+
+.custom-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+}
