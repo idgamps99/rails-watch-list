@@ -32,3 +32,10 @@ class ListsController < ApplicationController
     params.require(:list).permit(:name)
   end
 end
+
+# <h2><%= @list.name %></h2>
+# <% @bookmarks.each do |bm| %>
+# <%= @movies.find(bm.movie_id).title %>
+# <%= @movies.find(bm.movie_id).rating %> <%# This seems very inefficient %>
+# <%= bm.comment %>
+# <% end %>
