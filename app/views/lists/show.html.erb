@@ -4,22 +4,25 @@
 <div class="container mt-4">
 
   <div class="d-flex justify-content-end mb-4">
-    <button class="btn btn-primary">Add Movie</button>
+    <button class="button"><%= link_to "add a movie", new_list_bookmark_path(@list) %></button>
   </div>
-  <div class="row g-4">
-    <div class="col-md-4">
-      <% @bookmarks.each do |bm| %>
+
+  <% @bookmarks.each_slice(3) do |bm_group| %>
+    <div class="row g-4">
+      <% bm_group.each do |bm| %>
       <% @movie = @movies.find(bm.movie_id) %>
-      <div class="card">
-        <%# <img src="path_to_image.jpg" class="card-img-top" alt="Movie Image"> %>
-        <%= image_tag @movie.poster_url, alt: "Movie Poster", height: 200 %>
-        <div class="card-body">
-          <h5 class="card-title"><%= @movie.title %> <span class="badge bg-secondary"><%= @movie.rating %></span></h5>
-          <p class="card-text"><%= @movie.overview %></p>
+        <div class="col-md-4">
+          <div class="card movie-card">
+            <%# <img src="path_to_image.jpg" class="card-img-top" alt="Movie Image"> %>
+            <%= image_tag @movie.poster_url, alt: "Movie Poster", height: 200 %>
+            <div class="card-body">
+              <h5 class="card-title"><%= @movie.title %> <span class="badge bg-secondary"><%= @movie.rating %></span></h5>
+              <p class="card-text"><%= @movie.overview %></p>
+            </div>
+          </div>
         </div>
-      </div>
       <% end %>
     </div>
-  </div>
+  <% end %>
 
 </div>
