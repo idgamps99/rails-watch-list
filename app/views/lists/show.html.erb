@@ -24,7 +24,7 @@
               <p class="mb-0">
                 <i class="fa-regular fa-comment"></i></i> <%= bm.comment %>
               </p>
-              <a href="#" class="text-danger">delete</a>
+              <%= link_to "delete", bookmark_path(bm), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-danger" %>
             </div>
 
             </div>
