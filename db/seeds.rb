@@ -1,3 +1,6 @@
+require "open-uri"
+require "json"
+
 puts "Starting seeds..."
 # Movie.create(
 #   title: "Wonder Woman 1984",
@@ -23,22 +26,15 @@ puts "Starting seeds..."
 #   poster_url: "https://image.tmdb.org/t/p/original/MvYpKlpFukTivnlBhizGbkAe3v.jpg",
 #   rating: 7.0)
 
-# List.create(
-#   name: "All time favourites"
-# )
-# List.create(
-#   name: "Cosy night in"
-# )
-# List.create(
-#   name: "Favourite horror films"
-# )
-# List.create(
-#   name: "Best documentaries"
-# )
+file = URI.parse("https://tmdb.lewagon.com/movie/top_rated").read
+json_file = JSON.parse(file)
+movies = json_file["results"]
+movies.each do |movie|
+  # p movie["original_title"]
+  # p movie["overview"]
+  poster_url = "https://image.tmdb.org/t/p/w500#{movie["backdrop_path"]}"
+  p poster_url
+end
 
-wonder_woman = Movie.find(1)
-shawshank = Movie.find(2)
-titanic = Movie.find(3)
-ocean = Movie.find(4)
+
 puts "Finished seeding"
-
