@@ -11,16 +11,14 @@
       <button type="button" class="button"><%= link_to "Add New List", new_list_path %></button>
     </div>
   </div>
-
-  <div class="row">
+<%# Cards %>
+  <div class="cards">
     <% @lists.each do |list| %>
-      <div class="col-md-4 mb-4">
-      <div class="card text-center list-card">
-        <div class="card-body custom-center">
-          <h5><%= link_to list.name, list_path(list) %></h5>
-        </div>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+      url('<%= cl_image_path(list.photo.key, height: 300, crop: :fill) if list.photo.attached? %>')">
+        <h5><%= link_to list.name, list_path(list) %></h5>
       </div>
-    </div>
     <% end %>
+  </div>
   </div>
 </div>

@@ -1,10 +1,11 @@
 <%= render :partial => "shared/navbar" %>
 
-<div class="container">
-  <h1>New List:</h1>
-    <%= form_with model: @list do |f| %>
+<div class="container d-flex justify-content-center">
+  <%= simple_form_for @list do |f| %>
+    <h2>New List:</h2>
     <%= f.label :name %>
     <%= f.text_field :name %>
-    <%= f.submit %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit "Create List", class: "form-button" %>
   <% end %>
 </div>

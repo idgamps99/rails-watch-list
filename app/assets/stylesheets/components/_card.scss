@@ -16,11 +16,43 @@
   }
 }
 
-.list-card {
-  height: 250px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  h5 {
+// .list-card {
+//   height: 250px;
+//   border-radius: 8px;
+//   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+//   text-align: center;
+
+//   img {
+//     width:100%;
+//     background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))
+//   }
+//   h5 {
+//     text-decoration: none;
+//   }
+// }
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  a {
     text-decoration: none;
+    font-weight: bolder;
+    color: white;
   }
 }

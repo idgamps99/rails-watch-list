@@ -12,3 +12,20 @@
     color: white;
   }
 }
+
+.form-button {
+  border-radius: 6px;
+  background-color: #243addd8;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border: none;
+  padding: 10px 26px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  margin: 12px;
+  color: white;
+  &:hover {
+    background-color: #437BC2;
+    transform: scale(1.05);
+  }
+}
