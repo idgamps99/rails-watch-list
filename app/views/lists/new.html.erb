@@ -1,8 +1,10 @@
 <%= render :partial => "shared/navbar" %>
 
-<h1>New List:</h1>
-  <%= form_with model: @list do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.submit %>
-<% end %>
+<div class="container">
+  <h1>New List:</h1>
+    <%= form_with model: @list do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.submit %>
+  <% end %>
+</div>
